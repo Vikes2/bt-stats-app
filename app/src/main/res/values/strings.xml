@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">BT-Stat</string>
     <string name="action_settings">Favourite</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="in1_hint_dialog">Name</string>
+    <string name="positive_button">Add</string>
+    <string name="negative_button">Cancel</string>
+    <string name="confirm_quest">Are you sure?</string>
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
+    <string name="update_button">Update</string>
 </resources>

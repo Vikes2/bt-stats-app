@@ -1,5 +1,6 @@
 package com.github.vikes2.bt_stat;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +48,9 @@ public class BoundedDevicesAdapter extends BaseAdapter {
         } else {
             holder = (BoundedDeviceHolder)convertView.getTag();
         }
-
-
+        if(mBoundedDeviceList.size() <= position){
+            return convertView;
+        }
         BoundedDevice boundedDevice = mBoundedDeviceList.get(position);
         holder.mName.setText(boundedDevice.getName());
         holder.mMac.setText(boundedDevice.getMac());

@@ -58,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                Log.d("pawelski", "zakonczono");
+                //processData();
+            }
+        }
+    }
+
     //The BroadcastReceiver that listens for bluetooth broadcasts
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
