@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BT-Stat</string>
+    <string name="action_settings">Ulubione</string>
+    <string name="in1_hint_dialog">Nazwa</string>
+    <string name="positive_button">Dodaj</string>
+    <string name="negative_button">Anuluj</string>
+    <string name="confirm_quest">Czy na pewno?</string>
+    <string name="yes_button">Tak</string>
+    <string name="no_button">Nie</string>
+    <string name="update_button">Zmień</string>
+
+    <string name="hour"> godz.</string>
+    <string name="minutes">min</string>
+    <string name="seconds">sec</string>
+    <string name="reset_stats">Zresetuj</string>
+
+    <plurals name="day">
+        <item quantity="one">%d dzień </item>
+        <item quantity="few">%d dni </item>
+        <item quantity="many">%d dni </item>
+    </plurals>
+</resources>
