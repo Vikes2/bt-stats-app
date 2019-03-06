@@ -24,10 +24,8 @@ public class BtBroadcastReceiver extends BroadcastReceiver {
                 BTDatabase.class, "database-name").build();
 
         if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-            Log.d("pawelski", "found");
         }
         else if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
-            Log.d("pawelski", "Device is now connected");
 
 
 
@@ -62,13 +60,10 @@ public class BtBroadcastReceiver extends BroadcastReceiver {
             });
         }
         else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
-            Log.d("pawelski", "Done searching");
         }
         else if (BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED.equals(action)) {
-            Log.d("pawelski", "Device is about to disconnect");
         }
         else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
-            Log.d("pawelski", "Device has disconnected");
 
             AsyncTask.execute(new Runnable() {
                 @Override
@@ -80,7 +75,6 @@ public class BtBroadcastReceiver extends BroadcastReceiver {
 
                         if(lastConnected.length > 0){
                             if(!device.getAddress().equals(lastConnected[0].network_id)){
-                                Log.d("pawelski", "tu zly dc");
                             }
                             db.actionDao().insert(new Action(lastConnected[0].network_id, false, Calendar.getInstance().getTimeInMillis()));
                         }
@@ -89,7 +83,6 @@ public class BtBroadcastReceiver extends BroadcastReceiver {
             });
         }
         else if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
-            Log.d("pawelski", "ACTION BOND STATE CHANGED");
         }
     }
 

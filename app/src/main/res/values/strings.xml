@@ -13,6 +13,7 @@
     <string name="seconds">sec</string>
     <string name="id" translatable="false">Id</string>
     <string name="reset_stats">reset</string>
+    <string name="refresh">Refresh</string>
 
     <plurals name="day">
         <item quantity="one">%d day </item>

@@ -32,6 +32,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.setOnItemLongClickListener(new StatsAdapter.OnItemLongClickListener() {
             @Override
             public void onItemClick(int position) {
-                Log.d("pawelski", "on Long click");
             }
         });
     }
@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
                         processData();
                         mAdapter.notifyDataSetChanged();
-                        Log.d("pawelski", ": Pobrano akcje w ilości: " + actions.size());
                     }
                 });
             }
@@ -221,15 +220,17 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.reset:
                 AsyncTask.execute(new Runnable() {
-
                     @Override
                     public void run() {
                         for( int i = 0; i< actionList.size(); i++){
                             db.actionDao().delete(actionList.get(i));
                         }
-
                     }
                 });
+                return true;
+            case R.id.refresh:
+                processData();
+                return true;
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
@@ -240,10 +241,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             if(resultCode == RESULT_OK) {
-                Log.d("pawelski", "zakonczono");
                 processData();
             }
         }
     }
 
+    public void refreshClick(View view) {
+        processData();
+    }
 }

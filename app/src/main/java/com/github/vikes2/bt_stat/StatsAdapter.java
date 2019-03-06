@@ -45,7 +45,6 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
         if(mData == null){
             holder.mTimeView.setText("unknown");
         }else{
-            //Log.d("pawelski", "why un2 :"+ currentItem.mac + " and set"+ mData.keySet());
 
             if(mData.containsKey(currentItem.mac)){
 
